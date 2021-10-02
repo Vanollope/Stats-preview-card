@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*a {
+    text-decoration: none;
+}
+
+html, 
+body {
+    width: 100vw;
+    font-size: 100%;
+}
+
+body {
+    background: hsl(233, 47%, 7%);
+    color: #fff;
+    font-family: 'inter', sans-serif;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 100vw;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    width: 65%;
+    background: hsl(244, 38%, 16%);
+    border-radius: 1.5em;
+    
+}
+
+.text-content {
+    padding: 6em 8em;
+   
+}
+
+h1 {
+    font-size: clamp(2em, 7vw, 3em);
+    margin-bottom: 0.75em;
+    
+}
+
+.insights {
+    color: hsl(277, 64%, 61%);
+}
+
+.paragraph {
+    color: hsla(0, 0%, 100%, 0.75);
+    max-width: 40ch;
+    font-size: 1.25rem;
+}
+
+.figures {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 4em 1.5em 0;
+}
+
+.figure {
+    font-size: 1.75rem;
+    font-weight: 700;
+    flex: 1 1 100%;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: hsla(0, 0%, 100%, 0.75);
+}
+
+.duotone-container {
+    position: relative;
+}
+
+.duotone {
+    background-image: url(images/image-header-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 1.5em 1.5em 0;
+
+}
+
+.duotone::before, 
+.duotone::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0 1.5em 1.5em 0;
+
+}
+
+/* highlight color */
+.duotone::after {
+    background-color: hsl(277, 64%, 61%);
+    mix-blend-mode: multiply;
+}
+
+/* shadow color */
+.duotone::before {
+    background: hsl(277, 41%, 18%);
+    mix-blend-mode: screen;
+}
+
+
+/* Mobile Layout */
+
+@media (max-width: 411px) {
+    
+    .body {
+        background: hsl(244, 38%, 16%);
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 30% 1fr;
+        width: 100%;
+        border-radius: 0;
+        
+    }
+
+    .duotone-container {
+        border-radius: 0;
+        order: 1;
+    }
+
+    .text-content {
+        padding: 0;
+        flex-flow: column wrap;
+        padding: 2em;
+        order: 2;
+    }
+
+    .figures {
+        flex-flow: column wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        
+    }
+
+    .figure {
+        font-size: 2.45rem;
+        font-weight: 700;
+        flex: 1 1 100%;
+    }
+
+    .paragraph {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .duotone::before, 
+    .duotone::after {
+        border-radius: 0;
+    }
+
+    .duotone {
+        border-radius: 0;
+    }
+}
